@@ -1,4 +1,5 @@
 import numpy as np
+from scipy import stats as st
 from matplotlib import pyplot as plt
 
 
@@ -45,6 +46,8 @@ if __name__ == '__main__':
     plt.subplot(1, 3, 1)
     plt.title("Poison mean distribution")
     plt.hist(poison_averages, bins=100, density=True)
+
+    print(f"mean {np.mean(poison_averages)}, mode {st.mode(poison_averages)}, median {np.median(poison_averages)}")
 
     plt.subplot(1, 3, 2)
     plt.hist(exponential_averages, bins=100, density=True)
